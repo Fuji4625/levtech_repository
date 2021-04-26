@@ -22,5 +22,6 @@ Route::get('/', 'PostController@index');
 
 //ブログの詳細表示
 Route::get('/posts/{post}', 'PostController@show');
-            
+
+Route::get('/posts/create', 'PostController@create');
 ?>
