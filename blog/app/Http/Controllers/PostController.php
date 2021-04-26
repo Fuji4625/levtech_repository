@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Category;
 use App\Post;
+use App\Http\Requests\PostRequest;
 use Illuminate\Http\Request;
 
 
@@ -24,17 +26,17 @@ public function index(Post $post)
     return view('index')->with(['posts' => $post->getPaginateByLimit()]);
 //  return view('index');
   }
-  
-/**
- * 特定IDのpostを表示する
- *
- * @params Object Post // 引数の$postはid=1のPostインスタンス
- * @return Reposnse post view
- */
-public function show(Post $post)
-{
-    return view('show')->with(['post' => $post]);
-}
+      
+    /**
+     * 特定IDのpostを表示する
+     *
+     * @params Object Post // 引数の$postはid=1のPostインスタンス
+     * @return Reposnse post view
+     */
+    public function show(Post $post)
+    {
+        return view('show')->with(['post' => $post]);
+    }
 }
 
 ?>

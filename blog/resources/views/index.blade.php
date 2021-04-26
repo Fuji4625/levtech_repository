@@ -11,9 +11,9 @@
         <div class='posts'>
             @foreach ($posts as $post)
             <div class='post'>
-                    <h2 class="title">{{ $post->title }}</h2>
+                <h3><a href="/posts/{{ $post->id }}">{{ $post->title }}</a></h3>
                     <p class="body">{{ $post->body }}</p>
-                <h3><a href="/posts/{{ $post->id }}">{{ $post->title }}</a>
+                    
                     <h2 class="title">Title2</h2>
                     <p class="body">Second body.</p>
                 
@@ -34,7 +34,7 @@
                 
                     <h2 class="title">Title8</h2>
                     <p class="body">8th body.</p>
-                    
+                       
             </div>
             @endforeach
         </div>
