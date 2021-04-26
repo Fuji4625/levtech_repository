@@ -35,6 +35,8 @@
                     <h2 class="title">Title8</h2>
                     <p class="body">8th body.</p>
                        
+                [<a href='/posts/create'>create</a>]
+                
             </div>
             @endforeach
         </div>
