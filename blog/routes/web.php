@@ -12,13 +12,15 @@
 */
 
 Route::get('/posts', 'PostController@index');
-Route::get('/', function(){
-                return view('index');
-            });
-            
-            
-            
-            
-            
+//Route::get('/', function(){
+//                return view('index');
+//            });
+Route::get('/', 'PostController@index');           
+
+//ブログの詳細表示
+Route::get('/posts/{post}', 'PostController@show');
+
+Route::get('/posts/{post}', 'PostController@show');           
+
             
 ?>
