@@ -1,6 +1,6 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
+//use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,8 +20,10 @@ Route::get('/', 'PostController@index');
 //            });
         
 
+Route::get('/posts/create', 'PostController@create');
 //ブログの詳細表示
 Route::get('/posts/{post}', 'PostController@show');
+//DBへの投稿の登録
+Route::post('/posts', 'PostController@store');
 
-Route::get('/posts/create', 'PostController@create');
 ?>

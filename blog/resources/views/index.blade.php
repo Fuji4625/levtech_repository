@@ -8,34 +8,14 @@
     </head>
     <body>
         <h1>Blog Name</h1>
+        <p class="create">[<a href='/posts/create'>create</a>]</p>
         <div class='posts'>
             @foreach ($posts as $post)
             <div class='post'>
-                <h3><a href="/posts/{{ $post->id }}">{{ $post->title }}</a></h3>
+                    <h2><a href="/posts/{{ $post->id }}">{{ $post->title }}</h2></a>
                     <p class="body">{{ $post->body }}</p>
                     
-                    <h2 class="title">Title2</h2>
-                    <p class="body">Second body.</p>
-                
-                    <h2 class="title">Title3</h2>
-                    <p class="body">Third body.</p>
-                
-                    <h2 class="title">Title4</h2>
-                    <p class="body">4th body.</p>
-                
-                    <h2 class="title">Title5</h2>
-                    <p class="body">5th body.</p>
-                    
-                    <h2 class="title">Title6</h2>
-                    <p class="body">6th body.</p>
-                
-                    <h2 class="title">Title7</h2>
-                    <p class="body">7th body.</p>
-                
-                    <h2 class="title">Title8</h2>
-                    <p class="body">8th body.</p>
                        
-                [<a href='/posts/create'>create</a>]
                 
             </div>
             @endforeach

@@ -2,12 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Category;
 use App\Post;
+//use Illuminate\Http\Request;
 use App\Http\Requests\PostRequest;
-use Illuminate\Http\Request;
-
-
 
 class PostController extends Controller
 {
@@ -23,7 +20,7 @@ public function index(Post $post)
     //return $post->get();
     //return view('index')->with(['posts' => $post->get()]);
               //Indexに対して、Postsという変数名でPostテーブルのデータを渡す、の意味
-    return view('index')->with(['posts' => $post->getPaginateByLimit()]);
+    return view('index')->with(['posts' => $post->getPaginate()]);
 //  return view('index');
   }
       
@@ -40,6 +37,13 @@ public function index(Post $post)
     public function create()
     {
         return view('create');
+    }
+    
+    public function store(PostRequest $request, Post $post)
+    {
+        $input = $request['post'];
+        $post->fill($input)->save();
+        return redirect('/posts/' . $post->id);
     }
 }
 
